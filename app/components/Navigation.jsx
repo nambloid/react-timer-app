@@ -13,7 +13,7 @@ var Navigation = () => {
                         <NavLink exact to="/" activeClassName="active">Timer</NavLink>
                     </li>
                     <li>
-                        <NavLink exact to="/" activeClassName="active">Countdown</NavLink>
+                        <NavLink exact to="/countdown" activeClassName="active">Countdown</NavLink>
                     </li>
                 </ul>
             </div>
