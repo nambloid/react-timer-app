@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Clock from 'Clock';
+
 var Timer = () => {
     return (
         <div>
-            <p>Timer.jsx</p>
+            <Clock/>
         </div>
     );
 };

@@ -8,10 +8,9 @@ import Countdown from 'Countdown';
 var Main = (props) => {
     return (
         <div>
-            <div>
-                <div>
-                    <Navigation/>
-                    <p>Main.jsx Rendered</p>
+            <Navigation/>
+            <div className="grid-x align-center">
+                <div className="large-4 medium-6 small-2">
                     <Route exact path="/" component={Timer}/>
                     <Route path="/countdown" component={Countdown}/>
                 </div>
