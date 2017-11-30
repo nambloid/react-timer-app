@@ -8,7 +8,7 @@ class Countdown extends React.Component {
     constructor (props) {
         super(props);
         this.handleSetCountdown = this.handleSetCountdown.bind(this);
-        this.startTimer = this.startTimer.bind(this);
+        this.handleStart = this.handleStart.bind(this);
         this.handleStatusChange = this.handleStatusChange.bind(this);
         this.state = {
             count: 0,
@@ -19,22 +19,24 @@ class Countdown extends React.Component {
         if (this.state.countdownStatus !== prevState.countdownStatus) {
             switch (this.state.countdownStatus) {
                 case 'started':
-                    this.startTimer();
+                    this.handleStart();
                     break;
                 case 'stopped':
                     this.setState({count: 0});
                 case 'paused':
-                    clearInterval(this.timer);
-                    this.timer = undefined;
+                    this.handleStop();
                     break;
             }
         }
     }
     componentWillUnmount () {
+        this.handleStop();
+    }
+    handleStop () {
         clearInterval(this.timer);
         this.timer = undefined;
     }
-    startTimer () {
+    handleStart () {
         this.timer = setInterval(() => {
             var newCount = this.state.count - 1;
             this.setState({
