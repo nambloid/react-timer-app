@@ -42,7 +42,7 @@ class Countdown extends React.Component {
             });
 
             if (newCount === 0) this.setState({countdownStatus: 'stopped'});
-            
+
         }, 1000);
     }
     handleSetCountdown (seconds) {
@@ -67,6 +67,7 @@ class Countdown extends React.Component {
 
         return (
             <div>
+                <h1 className="page-title">Countdown</h1>
                 <Clock totalSeconds={count}/>
                 {renderControlArea()}
             </div>
